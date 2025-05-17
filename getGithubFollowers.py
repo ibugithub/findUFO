@@ -1,6 +1,9 @@
 import requests
 import csv
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 followers = []
 followings = []
 
@@ -70,12 +73,12 @@ def convert_to_csv():
             writer.writerow([user])
     
 
-your_username = "ibugithub"
-your_token = "u" 
+username = "ibugithub"
+token = os.getenv("token")
 
 
-get_github_followers(your_username, your_token)
-get_github_followings(your_username, your_token)
+get_github_followers(username, token)
+get_github_followings(username, token)
 analyze()
 convert_to_csv()
 

@@ -1,10 +1,13 @@
 import csv
 import requests
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 
 username = "ibugithub"
-token = "" 
+token = os.getenv("token")
 
 def unFollowWhoNotF():
   with open('notFollowingMe.csv', 'r') as file:
